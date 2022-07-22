@@ -1,10 +1,21 @@
-<h4><%= @members.length %> members in the Fire Nation</h4> 
+<h4><%= @members.length %> members in the <%= @nation %></h4> 
 <% @members.each_with_index do |member, index| %>
   <% break if index > 24 %>
   <div id="member-<%= index %>">
     Name: <%= member.name %><br>
-    Allies: <%= member.allies.join(", ") %><br>
-    Enemies: <%= member.enemies.join(", ") %><br>
+    <% if member.photo_url %>
+      <%= image_tag(member.photo_url)%><br>
+    <% end %>
+    <% if member.allies == [] %>
+      Allies: None <br>
+    <% else %>
+      Allies: <%= member.allies.join(", ") %><br>
+    <% end %>
+    <% if member.enemies == [] %>
+      Enemies: None <br>
+    <% else %>
+      Enemies: <%= member.enemies.join(", ") %><br>
+    <% end %>
     Affiliation: <%= member.affiliation %><br>
   </div>
   <br>

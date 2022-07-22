@@ -9,7 +9,7 @@ RSpec.describe "search index page" do
     click_button("Search For Members")
 
     expect(current_path).to eq('/search')
-
+save_and_open_page
     expect(page).to have_content("97 members in the Fire Nation")
     within '#member-0' do
       expect(page).to have_content("Name: Chan (Fire Nation admiral)")
