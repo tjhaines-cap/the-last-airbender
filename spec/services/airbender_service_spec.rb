@@ -4,7 +4,7 @@ RSpec.describe AirbenderService do
   describe "#get_nation_members" do
     it "returns a list of all members of a given nation" do
       members = AirbenderService.get_nation_members("Fire Nation")
-
+      
       expect(members).to be_a(Array)
       expect(members.length).to eq(97)
 
