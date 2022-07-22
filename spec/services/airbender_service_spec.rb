@@ -8,11 +8,12 @@ RSpec.describe AirbenderService do
       expect(members).to be_a(Array)
       expect(members.length).to eq(97)
 
-      member = members.first
-      expect(member).to have_key(:allies)
-      expect(member).to have_key(:enemies)
-      expect(member).to have_key(:affiliation)
-      expect(member).to have_key(:name)
+      members.each do |member| 
+        expect(member).to have_key(:allies)
+        expect(member).to have_key(:enemies)
+        expect(member).to have_key(:affiliation)
+        expect(member).to have_key(:name)
+      end
     end
   end
 end
