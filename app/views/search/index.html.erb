@@ -1,0 +1,11 @@
+<h4><%= @members.length %> members in the Fire Nation</h4> 
+<% @members.each_with_index do |member, index| %>
+  <% break if index > 24 %>
+  <div id="member-<%= index %>">
+    Name: <%= member.name %><br>
+    Allies: <%= member.allies.join(", ") %><br>
+    Enemies: <%= member.enemies.join(", ") %><br>
+    Affiliation: <%= member.affiliation %><br>
+  </div>
+  <br>
+<% end %>
